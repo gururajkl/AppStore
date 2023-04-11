@@ -16,7 +16,6 @@
 
         <Image  Grid.Row="0"
                 Margin="0,5"
-                Source="/Images/001-mail inbox app.png"
                 Name="ProductImage"
                 MouseUp="ProductImage_MouseUp" />
 

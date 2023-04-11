@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="App window"
         Height="450"
-        Width="800">
+        Width="820">
     <Grid>
-        <uc:AnApp />
+        <uc:AppsViewer />
     </Grid>
 </Window>

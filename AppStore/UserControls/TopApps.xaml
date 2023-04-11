@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="AppStore.UserControls.TopApps"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="0.25*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.33*" />
+            <RowDefinition Height="0.33*" />
+            <RowDefinition Height="0.33*" />
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0"
+               Grid.Column="0"
+               Grid.RowSpan="2"
+               Grid.ColumnSpan="3"
+               Source="/Images/TopAppIcons/81-tropical.png"
+               VerticalAlignment="Stretch"
+               HorizontalAlignment="Stretch"
+               Stretch="Fill"
+               Margin="2"
+               MouseUp="Image_MouseUp" />
+
+        <Image Name="TopImage"
+               Source="/Images/TopAppIcons/82-circus fun.png"
+               Grid.Column="3"
+               Grid.Row="0"
+               Stretch="Fill"
+               Margin="2"
+               VerticalAlignment="Stretch"
+               HorizontalAlignment="Stretch"
+               MouseUp="Image_MouseUp" />
+
+        <Image Name="MiddleImage"
+               Source="/Images/TopAppIcons/83-Race extreme.png"
+               Grid.Column="3"
+               Grid.Row="1"
+               Stretch="Fill"
+               Margin="2"
+               VerticalAlignment="Stretch"
+               HorizontalAlignment="Stretch"
+               MouseUp="Image_MouseUp" />
+
+        <Image Source="/Images/TopAppIcons/85-Night castle.png"
+               Grid.Column="2"
+               Grid.Row="2"
+               Stretch="Fill"
+               Margin="2"
+               VerticalAlignment="Stretch"
+               HorizontalAlignment="Stretch"
+               MouseUp="Image_MouseUp" />
+
+        <Image Name="BottomImage"
+               Source="/Images/TopAppIcons/84-chat message.png"
+               Grid.Column="3"
+               Grid.Row="2"
+               Stretch="Fill"
+               Margin="2"
+               VerticalAlignment="Stretch"
+               HorizontalAlignment="Stretch"
+               MouseUp="Image_MouseUp" />
+
+        <Grid Name="BottomGrid"
+              Grid.Row="3"
+              Grid.Column="0"
+              Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.5*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="TopAppsButton"
+                    FontSize="18"
+                    Grid.Row="0"
+                    Content="Top Apps"
+                    Grid.Column="0"
+                    Margin="2" />
+
+            <Button x:Name="FeaturedButton"
+                    FontSize="18"
+                    Grid.Row="0"
+                    Content="Featured"
+                    Grid.Column="1"
+                    Margin="2" />
+
+            <Button x:Name="TopGamesButton"
+                    FontSize="18"
+                    Grid.Row="1"
+                    Content="Top Games"
+                    Grid.Column="0"
+                    Margin="2" />
+
+            <Button x:Name="ColletionButton"
+                    FontSize="18"
+                    Grid.Row="1"
+                    Content="Collections"
+                    Grid.Column="1"
+                    Margin="2" />
+        </Grid>
+
+    </Grid>
+</UserControl>
