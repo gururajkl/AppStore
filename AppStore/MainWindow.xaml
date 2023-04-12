@@ -9,6 +9,6 @@
         Height="450"
         Width="820">
     <Grid>
-        <uc:AppsViewer />
+        <uc:ProductivityTopApps />
     </Grid>
 </Window>
