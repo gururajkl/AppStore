@@ -15,7 +15,8 @@ namespace AppStore
 
         private void MainWindowFrame_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindowFrame.Content = MainWindowContentPage;
+            AppDetails appDetails = new AppDetails();
+            MainWindowFrame.Content = appDetails;
         }
     }
 }
