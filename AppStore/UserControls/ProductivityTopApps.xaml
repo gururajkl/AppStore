@@ -25,8 +25,7 @@
                               Width="0.25*" />
         </Grid.ColumnDefinitions>
 
-        <!--photoshop.jpeg-->
-        <Image Source="/Images/TopAppIcons/82-circus fun.png"
+        <Image Source="/Images/ProductivityAppIcons/Photoshop.png"
                Grid.Column="0"
                Grid.Row="0"
                Grid.RowSpan="2"
@@ -37,8 +36,7 @@
                HorizontalAlignment="Stretch"
                MouseUp="Image_MouseUp" />
 
-        <!--snackImage-->
-        <Image Source="/Images/TopAppIcons/82-circus fun.png"
+        <Image Source="/Images/ProductivityAppIcons/DrawboardPDF.png"
                Grid.Column="0"
                Grid.Row="2"
                Stretch="Fill"
@@ -47,8 +45,7 @@
                HorizontalAlignment="Stretch"
                MouseUp="Image_MouseUp" />
 
-        <!--watch-->
-        <Image Source="/Images/TopAppIcons/82-circus fun.png"
+        <Image Source="/Images/ProductivityAppIcons/YourPhone.png"
                Grid.Column="1"
                Grid.Row="2"
                Stretch="Fill"
@@ -57,9 +54,8 @@
                HorizontalAlignment="Stretch"
                MouseUp="Image_MouseUp" />
 
-        <!--FinanceImage-->
         <Image  Name="RightLargeImage"
-                Source="/Images/TopAppIcons/82-circus fun.png"
+                Source="/Images/ProductivityAppIcons/HotspotShield.png"
                 Grid.Column="2"
                 Grid.Row="0"
                 Grid.RowSpan="2"
@@ -70,8 +66,7 @@
                 HorizontalAlignment="Stretch"
                 MouseUp="Image_MouseUp" />
 
-        <!--slickdraw-->
-        <Image Source="/Images/TopAppIcons/82-circus fun.png"
+        <Image Source="/Images/ProductivityAppIcons/PicsArt.png"
                Grid.Column="2"
                Grid.Row="2"
                Stretch="Fill"
@@ -80,9 +75,8 @@
                HorizontalAlignment="Stretch"
                MouseUp="Image_MouseUp" />
 
-        <!--PhoneImage-->
         <Image Name="BottomRightImage"
-               Source="/Images/TopAppIcons/82-circus fun.png"
+               Source="/Images/ProductivityAppIcons/ACDSee.png"
                Grid.Column="3"
                Grid.Row="2"
                Stretch="Fill"

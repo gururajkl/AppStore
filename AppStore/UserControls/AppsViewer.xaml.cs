@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace AppStore.UserControls
 {
@@ -35,6 +36,16 @@ namespace AppStore.UserControls
                 2 * (int)presentedApps.First().Margin.Left;
 
             AppsScrollView.ScrollToHorizontalOffset(AppsScrollView.HorizontalOffset + 1 * widthOfOneApp);   
+        }
+
+        private void AppsScrollView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            e.Handled = true;
+            var eventArgs = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+            eventArgs.RoutedEvent = UIElement.MouseWheelEvent;
+            eventArgs.Source = sender;
+            var parent = ((Control)sender).Parent as UIElement;
+            parent.RaiseEvent(eventArgs);
         }
     }
 }

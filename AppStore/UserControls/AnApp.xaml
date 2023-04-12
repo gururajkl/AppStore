@@ -34,7 +34,7 @@
 
                 <TextBlock Name="AppName"
                            Grid.Row="0"
-                           HorizontalAlignment="Center"
+                           HorizontalAlignment="Left"
                            VerticalAlignment="Top"
                            Foreground="White"
                            Text="Zoom Rooms"

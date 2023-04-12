@@ -1,0 +1,219 @@
+﻿<Page x:Class="AppStore.Pages.Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:uc="clr-namespace:AppStore.UserControls"
+      mc:Ignorable="d"
+      d:DesignHeight="850"
+      d:DesignWidth="450"
+      Title="Main">
+
+    <Grid Name="MainWindowMainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35" />
+            <ColumnDefinition Width="0.60*" />
+            <ColumnDefinition Width="0.40*" />
+            <ColumnDefinition Width="35" />
+        </Grid.ColumnDefinitions>
+
+        <TabControl Name="MainTabControl"
+                    Visibility="Visible"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Grid.RowSpan="2"
+                    ClipToBounds="True">
+
+            <TabItem Header="Home"
+                     Name="HomeTab">
+                <ScrollViewer Name="MainScrollViewer"
+                              HorizontalScrollBarVisibility="Hidden"
+                              VerticalScrollBarVisibility="Hidden"
+                              Loaded="MainScrollViewer_Loaded"
+                              Margin="10">
+
+                    <!--Animation in XAML-->
+                    <ScrollViewer.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0"
+                                                     To="1"
+                                                     Duration="0:0:1"
+                                                     Storyboard.TargetProperty="Opacity" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ScrollViewer.Triggers>
+
+                    <StackPanel x:Name="MainHomeStackPanel"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Visibility="Visible"
+                                Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}">
+
+                        <uc:TopApps x:Name="TopApps"
+                                    Margin="2"
+                                    HorizontalAlignment="Left"
+                                    Width="{Binding ElementName=MainTabControl, Path=ActualWidth}" />
+
+                        <Label HorizontalAlignment="Left"
+                               Content="Featured Apps"
+                               FontSize="40"
+                               Margin="10" />
+
+                        <uc:AppsViewer x:Name="FeaturesAppsViewer"
+                                       Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
+                                       HorizontalAlignment="Left"
+                                       Margin="2" />
+
+                        <Label HorizontalAlignment="Left"
+                               Content="Most popular"
+                               FontSize="40"
+                               Margin="10" />
+
+                        <uc:AppsViewer x:Name="MostPopularAppsViewer"
+                                       Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
+                                       HorizontalAlignment="Left"
+                                       Margin="2" />
+
+                        <Label HorizontalAlignment="Left"
+                               Content="Top Free Apps"
+                               FontSize="40"
+                               Margin="10" />
+
+                        <uc:AppsViewer x:Name="TopFreeAppsViewer"
+                                       Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
+                                       HorizontalAlignment="Left"
+                                       Margin="2" />
+
+                        <Label HorizontalAlignment="Left"
+                               Content="Top Free Games"
+                               FontSize="40"
+                               Margin="10" />
+
+                        <uc:AppsViewer x:Name="TopFreeGamesAppsViewer"
+                                       Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
+                                       HorizontalAlignment="Left"
+                                       Margin="2,2,2,50" />
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Header="Gaming">
+                <StackPanel VerticalAlignment="Top"
+                            HorizontalAlignment="Left"
+                            Visibility="Visible"
+                            Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}">
+
+                    <Label HorizontalAlignment="Left"
+                           Content="Top Free Games"
+                           FontSize="40"
+                           Margin="10" />
+
+                    <uc:AppsViewer x:Name="GameAppsViewer"
+                                   Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
+                                   HorizontalAlignment="Left"
+                                   Margin="2,2,2,50" />
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Entertainment">
+                <StackPanel VerticalAlignment="Top"
+                            HorizontalAlignment="Left"
+                            Visibility="Visible"
+                            Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}">
+                    <Label HorizontalAlignment="Left"
+                           Content="Top Free apps"
+                           FontSize="40"
+                           Margin="10" />
+
+                    <uc:AppsViewer x:Name="EntertainmentAppsViewer"
+                                   Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
+                                   HorizontalAlignment="Left"
+                                   Margin="2,2,2,50" />
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Productivity">
+                <ScrollViewer Name="ProductivityScrollViewer"
+                              HorizontalScrollBarVisibility="Hidden"
+                              VerticalScrollBarVisibility="Hidden"
+                              Loaded="MainScrollViewer_Loaded"
+                              Margin="10">
+
+                    <!--Animation in XAML-->
+                    <ScrollViewer.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="0"
+                                                     To="1"
+                                                     Duration="0:0:1"
+                                                     Storyboard.TargetProperty="Opacity" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ScrollViewer.Triggers>
+
+                    <StackPanel x:Name="ProductivityStackPanel"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Visibility="Visible"
+                                Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}">
+
+                        <Label HorizontalAlignment="Left"
+                               Content="Most popular"
+                               FontSize="40"
+                               Margin="10" />
+
+                        <uc:AppsViewer x:Name="MostPopularProductivityAppsViewer"
+                                       Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
+                                       HorizontalAlignment="Left"
+                                       Margin="2" />
+
+                        <Border BorderBrush="Black"
+                                BorderThickness="2"
+                                Margin="2,20,2,20">
+                            <uc:ProductivityTopApps x:Name="ProductivityAppsControl"
+                                                    HorizontalAlignment="Left"
+                                                    Width="{Binding ElementName=MainTabControl, Path=ActualWidth}" />
+                        </Border>
+
+
+                        <Label HorizontalAlignment="Left"
+                               Content="Cool Apps"
+                               FontSize="40"
+                               Margin="10" />
+
+                        <uc:AppsViewer x:Name="ProductivityL1"
+                                       Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
+                                       HorizontalAlignment="Left"
+                                       Margin="2 2 2 50" />
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Header="Deals">
+                <StackPanel VerticalAlignment="Top"
+                            HorizontalAlignment="Left"
+                            Visibility="Visible"
+                            Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}">
+                    <Label HorizontalAlignment="Left"
+                           Content="Top Deals"
+                           FontSize="40"
+                           Margin="10" />
+
+                    <uc:AppsViewer Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
+                                   HorizontalAlignment="Left"
+                                   Margin="2,2,2,50" />
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>
