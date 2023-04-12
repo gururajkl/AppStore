@@ -10,6 +10,9 @@ namespace AppStore.UserControls
     {
         List<AnApp> presentedApps = new List<AnApp>();
         int widthOfOneApp;
+        
+        public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppClicked AppClicked;
 
         public AppsViewer()
         {
@@ -18,14 +21,20 @@ namespace AppStore.UserControls
             for (int i = 0; i < 9; i++)
             {
                 AnApp app = new AnApp();
+                app.AppClicked += CurrentAppClicked;
                 presentedApps.Add(app);
             }
         }
 
+        public void CurrentAppClicked(AnApp sender, RoutedEventArgs e)
+        {
+            AppClicked(sender, e);
+        }
+
         private void ScrollLeft_Click(object sender, RoutedEventArgs e)
         {
-             widthOfOneApp = (int)presentedApps.First().ActualWidth +
-                2 * (int)presentedApps.First().Margin.Left;
+            widthOfOneApp = (int)presentedApps.First().ActualWidth +
+               2 * (int)presentedApps.First().Margin.Left;
 
             AppsScrollView.ScrollToHorizontalOffset(AppsScrollView.HorizontalOffset - 1 * widthOfOneApp);
         }
@@ -35,7 +44,7 @@ namespace AppStore.UserControls
             widthOfOneApp = (int)presentedApps.First().ActualWidth +
                 2 * (int)presentedApps.First().Margin.Left;
 
-            AppsScrollView.ScrollToHorizontalOffset(AppsScrollView.HorizontalOffset + 1 * widthOfOneApp);   
+            AppsScrollView.ScrollToHorizontalOffset(AppsScrollView.HorizontalOffset + 1 * widthOfOneApp);
         }
 
         private void AppsScrollView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)

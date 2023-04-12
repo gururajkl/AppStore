@@ -209,7 +209,8 @@
                            FontSize="40"
                            Margin="10" />
 
-                    <uc:AppsViewer Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
+                    <uc:AppsViewer x:Name="DealsAppsViewer"
+                                   Width="{Binding ElementName=MainScrollViewer, Path=ActualWidth}"
                                    HorizontalAlignment="Left"
                                    Margin="2,2,2,50" />
                 </StackPanel>

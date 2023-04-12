@@ -1,4 +1,6 @@
 ﻿using AppStore.Pages;
+using AppStore.UserControls;
+using System;
 using System.Windows;
 
 namespace AppStore
@@ -11,12 +13,17 @@ namespace AppStore
         {
             InitializeComponent();
             MainWindowContentPage = new Main();
+            MainWindowContentPage.AppClicked += MainWindowContentPage_AppClicked;
+        }
+
+        private void MainWindowContentPage_AppClicked(AnApp sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Clicked");
         }
 
         private void MainWindowFrame_Loaded(object sender, RoutedEventArgs e)
         {
-            AppDetails appDetails = new AppDetails();
-            MainWindowFrame.Content = appDetails;
+            MainWindowFrame.Content = MainWindowContentPage;
         }
     }
 }
